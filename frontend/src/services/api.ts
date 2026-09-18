@@ -81,7 +81,7 @@ export interface EnvironmentalState {
   region?: string;
 }
 
-const BASE_URL = '/api/v1';
+const BASE_URL = 'https://darukaa-apii.onrender.com/api/v1';
 
 async function fetchJSON<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(url, {

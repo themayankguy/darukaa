@@ -1,0 +1,324 @@
+[
+  {
+    "relationship_id": "REL_SEMIARID_SOC_MONOCULTURE",
+    "name": "Soil Carbon Depletion under Water-Limited Monoculture Cropping",
+    "required_conditions": [
+      "low_soil_organic_carbon",
+      "low_rainfall",
+      "monoculture"
+    ],
+    "environmental_variables": [
+      "soil_organic_carbon_pct",
+      "rainfall_regime",
+      "cropping_pattern"
+    ],
+    "mechanism": "Low soil organic carbon impairs soil macro-aggregate formation and water infiltration capacity; concurrent low precipitation exacerbates crop root water deficits, while continuous monoculture provides minimal root exudate diversity to support moisture-retaining mycorrhizal networks.",
+    "affected_metrics": [
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "candidate_interventions": [
+      "INT_LEGUME_INTERCROPPING",
+      "INT_ALLEY_CROPPING_AGROFORESTRY",
+      "INT_COVER_CROPPING_RESIDUE"
+    ],
+    "evidence_topics": [
+      "dryland soil carbon management",
+      "legume intercropping",
+      "agroforestry in semi-arid regions",
+      "soil organic matter water holding capacity"
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "relationship_id": "REL_THERMAL_DROUGHT_STRESS",
+    "name": "Compounded Heat and Evaporative Drought Stress",
+    "required_conditions": [
+      "low_soil_moisture",
+      "high_temperature",
+      "low_rainfall"
+    ],
+    "environmental_variables": [
+      "soil_moisture",
+      "temperature_regime",
+      "rainfall_regime"
+    ],
+    "mechanism": "High ambient temperatures exponentially elevate vapor pressure deficits (VPD) and crop transpiration rates; when compounded by low rainfall and dry soil moisture profiles, vegetative ground cover rapidly senesces, suppressing biological soil crusts and microbial respiration.",
+    "affected_metrics": [
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_TEMPERATURE_STRESS",
+      "METRIC_WATER_AVAILABILITY",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "candidate_interventions": [
+      "INT_ALLEY_CROPPING_AGROFORESTRY",
+      "INT_COVER_CROPPING_RESIDUE",
+      "INT_CONSERVATION_TILLAGE"
+    ],
+    "evidence_topics": [
+      "agroforestry microclimate cooling",
+      "stubble mulching evaporation suppression",
+      "drought resilience in drylands"
+    ],
+    "priority": "CRITICAL"
+  },
+  {
+    "relationship_id": "REL_MONOCULTURE_BIODIVERSITY_COLLAPSE",
+    "name": "Trophic Simplification under Homogeneous Monoculture",
+    "required_conditions": [
+      "monoculture",
+      "low_habitat_diversity",
+      "low_species_richness"
+    ],
+    "environmental_variables": [
+      "cropping_pattern",
+      "habitat_diversity",
+      "species_richness"
+    ],
+    "mechanism": "Landscape-scale crop monoculture eliminates spatial habitat heterogeneity and seasonal floral resources, driving a synchronous crash in pollinator abundance, natural pest predator communities, and above/below-ground trophic web complexity.",
+    "affected_metrics": [
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_POLLINATOR_INDICATORS"
+    ],
+    "candidate_interventions": [
+      "INT_POLLINATOR_HEDGEROWS",
+      "INT_CROP_ROTATION_DIVERSIFICATION",
+      "INT_LEGUME_INTERCROPPING"
+    ],
+    "evidence_topics": [
+      "field margin floral strips",
+      "biodiversity in agricultural landscapes",
+      "pollinator habitat connectivity",
+      "crop diversification"
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "relationship_id": "REL_DEFORESTATION_FRAGMENTATION",
+    "name": "Canopy Fragmentation and Terrestrial Habitat Disconnect",
+    "required_conditions": [
+      "deforestation",
+      "low_habitat_diversity",
+      "low_species_richness"
+    ],
+    "environmental_variables": [
+      "deforestation_status",
+      "habitat_diversity",
+      "species_richness"
+    ],
+    "mechanism": "Clearing native woody canopy fragments continuous ecological biomes into isolated habitat patches, causing severe edge effects, desiccation of forest understories, barrier effects against wildlife migration, and rapid localized species extinction.",
+    "affected_metrics": [
+      "METRIC_DEFORESTATION_PRESSURE",
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "candidate_interventions": [
+      "INT_HABITAT_CORRIDORS",
+      "INT_ALLEY_CROPPING_AGROFORESTRY",
+      "INT_POLLINATOR_HEDGEROWS"
+    ],
+    "evidence_topics": [
+      "forest landscape restoration",
+      "ecological corridors",
+      "habitat fragmentation mitigation",
+      "indigenous agroforestry"
+    ],
+    "priority": "CRITICAL"
+  },
+  {
+    "relationship_id": "REL_POLLUTION_AG_DECLINE",
+    "name": "Ecotoxic Chemical Runoff and Non-Target Biota Toxicity",
+    "required_conditions": [
+      "pollution_pressure",
+      "cropland",
+      "biodiversity_decline"
+    ],
+    "environmental_variables": [
+      "pollution_pressure",
+      "land_use_type",
+      "biodiversity_condition"
+    ],
+    "mechanism": "Intensive synthetic insecticide and herbicide applications in cropland landscapes induce chronic toxicity in non-target beneficial insect species and soil earthworms, while synthetic fertilizer runoff leaches into aquatic waterways causing eutrophication.",
+    "affected_metrics": [
+      "METRIC_POLLUTION_PRESSURE",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_POLLINATOR_INDICATORS"
+    ],
+    "candidate_interventions": [
+      "INT_INTEGRATED_PEST_NUTRIENT_MGMT",
+      "INT_RIPARIAN_BUFFER_STRIPS",
+      "INT_POLLINATOR_HEDGEROWS"
+    ],
+    "evidence_topics": [
+      "pesticide non-target toxicity",
+      "integrated pest management",
+      "vegetative filter strips",
+      "pollinator protection"
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "relationship_id": "REL_INTENSIVE_TILLAGE_DEGRADATION",
+    "name": "Mechanical Aggregation Breakdown and Subsoil Compaction",
+    "required_conditions": [
+      "low_soil_organic_carbon",
+      "low_soil_moisture",
+      "intensive_tillage"
+    ],
+    "environmental_variables": [
+      "soil_organic_carbon_pct",
+      "soil_moisture",
+      "agricultural_pressure"
+    ],
+    "mechanism": "Repeated mechanical moldboard or deep inversion plowing fractures protective soil macro-aggregates, hyper-oxidizing labile organic carbon to CO2, disrupting fungal hyphal networks, and creating an impermeable subsoil plow pan that exacerbates soil moisture loss.",
+    "affected_metrics": [
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_AGRICULTURAL_PRESSURE",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "candidate_interventions": [
+      "INT_CONSERVATION_TILLAGE",
+      "INT_COVER_CROPPING_RESIDUE",
+      "INT_LEGUME_INTERCROPPING"
+    ],
+    "evidence_topics": [
+      "conservation tillage",
+      "no-till carbon accumulation",
+      "soil aggregate stability",
+      "mycorrhizal conservation"
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "relationship_id": "REL_HEALTHY_SOIL_MONOCULTURE_GAP",
+    "name": "Unrealized Ecological Potential under Fertile Monoculture",
+    "required_conditions": [
+      "soil_health_adequate",
+      "monoculture",
+      "low_habitat_diversity"
+    ],
+    "environmental_variables": [
+      "soil_organic_carbon_pct",
+      "cropping_pattern",
+      "habitat_diversity"
+    ],
+    "mechanism": "When soil organic carbon and chemical fertility are structurally sound but management remains locked into single-crop monoculture, farm biological productivity is bottlenecked purely by above-ground structural simplicity and absent ecological niches.",
+    "affected_metrics": [
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_POLLINATOR_INDICATORS"
+    ],
+    "candidate_interventions": [
+      "INT_CROP_ROTATION_DIVERSIFICATION",
+      "INT_POLLINATOR_HEDGEROWS",
+      "INT_LEGUME_INTERCROPPING"
+    ],
+    "evidence_topics": [
+      "crop diversification benefits",
+      "field margin biodiversity",
+      "agroecological intensification"
+    ],
+    "priority": "MEDIUM"
+  },
+  {
+    "relationship_id": "REL_WATERLOGGING_ANOXIA",
+    "name": "Soil Saturation Anoxia and Root Zone Biodiversity Impairment",
+    "required_conditions": [
+      "high_rainfall",
+      "waterlogging",
+      "biodiversity_decline"
+    ],
+    "environmental_variables": [
+      "rainfall_regime",
+      "water_availability",
+      "biodiversity_condition"
+    ],
+    "mechanism": "Excessive or unmitigated high rainfall over compacted or poorly drained agricultural basins induces prolonged saturation and anaerobic conditions, leading to root asphyxiation, denitrification gaseous emissions, and die-off of aerobic soil organisms.",
+    "affected_metrics": [
+      "METRIC_WATER_AVAILABILITY",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_HABITAT_DIVERSITY"
+    ],
+    "candidate_interventions": [
+      "INT_BIOSWALES_WATER_HARVESTING",
+      "INT_RIPARIAN_BUFFER_STRIPS",
+      "INT_COVER_CROPPING_RESIDUE"
+    ],
+    "evidence_topics": [
+      "drainage bioswales",
+      "wetland habitat restoration",
+      "waterlogged soil aeration",
+      "riparian buffer hydrology"
+    ],
+    "priority": "HIGH"
+  },
+  {
+    "relationship_id": "REL_THERMAL_DEGRADED_SOIL",
+    "name": "Thermal Degradation Feedback Loop on Bare Degraded Soil",
+    "required_conditions": [
+      "high_temperature",
+      "low_soil_moisture",
+      "degraded_soil"
+    ],
+    "environmental_variables": [
+      "temperature_regime",
+      "soil_moisture",
+      "soil_condition_qualitative"
+    ],
+    "mechanism": "High daytime temperatures on depleted, bare topsoil trigger extreme surface heat spikes, thermal denaturation of microbial enzymes, and surface crusting, shutting down infiltration and sealing the soil surface against moisture intake.",
+    "affected_metrics": [
+      "METRIC_TEMPERATURE_STRESS",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "candidate_interventions": [
+      "INT_COVER_CROPPING_RESIDUE",
+      "INT_ALLEY_CROPPING_AGROFORESTRY",
+      "INT_CONSERVATION_TILLAGE"
+    ],
+    "evidence_topics": [
+      "surface mulch thermal dampening",
+      "agroforestry canopy shade",
+      "soil biological crust protection"
+    ],
+    "priority": "CRITICAL"
+  },
+  {
+    "relationship_id": "REL_AG_POLLINATOR_DEFICIT",
+    "name": "Pollination Deficit in Intensive Agricultural Landscapes",
+    "required_conditions": [
+      "cropland",
+      "low_habitat_diversity",
+      "low_pollinator_indicators"
+    ],
+    "environmental_variables": [
+      "land_use_type",
+      "habitat_diversity",
+      "biodiversity_indicators"
+    ],
+    "mechanism": "Intensive agricultural crop production in simplified landscapes deprives beneficial wild insect pollinators of continuous nectar/pollen forage and undisturbed subterranean or woody nesting habitats, leading to pollen-limitation of surrounding flora.",
+    "affected_metrics": [
+      "METRIC_POLLINATOR_INDICATORS",
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "candidate_interventions": [
+      "INT_POLLINATOR_HEDGEROWS",
+      "INT_LEGUME_INTERCROPPING",
+      "INT_INTEGRATED_PEST_NUTRIENT_MGMT"
+    ],
+    "evidence_topics": [
+      "pollinator forage strips",
+      "hedgerow floral diversity",
+      "wild pollinator conservation",
+      "nesting habitat in agroecosystems"
+    ],
+    "priority": "HIGH"
+  }
+]

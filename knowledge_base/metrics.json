@@ -1,0 +1,101 @@
+[
+  {
+    "metric_id": "METRIC_SOIL_PH",
+    "name": "Soil pH",
+    "domain": "soil_health",
+    "description": "Logarithmic measure of hydrogen ion concentration in soil solution indicating acidity, neutrality, or alkalinity.",
+    "unit": "pH scale (0-14)",
+    "directionality": "target_range (6.0-7.5 optimal for most crops)",
+    "related_variables": ["soil_ph"]
+  },
+  {
+    "metric_id": "METRIC_SOIL_ORGANIC_CARBON",
+    "name": "Soil Organic Carbon",
+    "domain": "soil_health",
+    "description": "Mass concentration of carbon stored in soil organic matter, key indicator of biological fertility, structure, and water retention.",
+    "unit": "percentage (%)",
+    "directionality": "higher_is_better",
+    "related_variables": ["soil_organic_carbon_pct"]
+  },
+  {
+    "metric_id": "METRIC_SOIL_MOISTURE",
+    "name": "Soil Moisture",
+    "domain": "soil_health",
+    "description": "Volumetric or qualitative water content held within the soil pore spaces available for microbial and plant root uptake.",
+    "unit": "qualitative / % volumetric",
+    "directionality": "higher_is_better (up to field capacity; waterlogging is detrimental)",
+    "related_variables": ["soil_moisture", "water_availability"]
+  },
+  {
+    "metric_id": "METRIC_SPECIES_RICHNESS",
+    "name": "Species Richness",
+    "domain": "biodiversity",
+    "description": "The count or relative abundance of distinct flora, fauna, and soil macro/microbial taxa inhabiting the land parcel.",
+    "unit": "taxa count or qualitative class",
+    "directionality": "higher_is_better",
+    "related_variables": ["species_richness", "biodiversity_condition"]
+  },
+  {
+    "metric_id": "METRIC_HABITAT_DIVERSITY",
+    "name": "Habitat Diversity",
+    "domain": "biodiversity",
+    "description": "Structural heterogeneity of the landscape, including vertical canopy tiers, field margins, ground litter, and ecological corridors.",
+    "unit": "qualitative / Shannon index",
+    "directionality": "higher_is_better",
+    "related_variables": ["habitat_diversity", "land_cover"]
+  },
+  {
+    "metric_id": "METRIC_POLLINATOR_INDICATORS",
+    "name": "Pollinator Abundance & Diversity",
+    "domain": "biodiversity",
+    "description": "Presence, floral visitation rates, and nesting habitat availability for wild bees, butterflies, and other insect pollinators.",
+    "unit": "visitation rate / qualitative status",
+    "directionality": "higher_is_better",
+    "related_variables": ["biodiversity_indicators", "habitat_diversity"]
+  },
+  {
+    "metric_id": "METRIC_WATER_AVAILABILITY",
+    "name": "Water Availability & Precipitation",
+    "domain": "climate",
+    "description": "Effective precipitation regime, seasonal distribution, and drought recurrence governing soil moisture replenishment.",
+    "unit": "mm/year or regime class",
+    "directionality": "higher_is_better (balanced regime without extended arid droughts or prolonged ponding)",
+    "related_variables": ["rainfall_regime", "rainfall_annual_mm", "water_availability"]
+  },
+  {
+    "metric_id": "METRIC_TEMPERATURE_STRESS",
+    "name": "Temperature Regime & Thermal Stress",
+    "domain": "climate",
+    "description": "Thermal exposure, peak surface heat intensity, and evapotranspiration deficit affecting vegetative respiration and microbial survival.",
+    "unit": "degrees Celsius or thermal stress class",
+    "directionality": "lower_is_better (moderate temperatures without extreme heat spikes)",
+    "related_variables": ["temperature_regime", "temperature_celsius"]
+  },
+  {
+    "metric_id": "METRIC_POLLUTION_PRESSURE",
+    "name": "Chemical Pollution Pressure",
+    "domain": "human_impact",
+    "description": "Ecotoxicological load from synthetic pesticides, herbicides, and excess soluble synthetic nitrogen fertilizer application.",
+    "unit": "application load or qualitative severity",
+    "directionality": "lower_is_better",
+    "related_variables": ["pollution_pressure", "human_pressures"]
+  },
+  {
+    "metric_id": "METRIC_DEFORESTATION_PRESSURE",
+    "name": "Deforestation & Clearing Pressure",
+    "domain": "human_impact",
+    "description": "Loss of woody vegetation cover, canopy removal, and clearing of native forest remnants fragmenting ecological corridors.",
+    "unit": "canopy loss % or qualitative class",
+    "directionality": "lower_is_better",
+    "related_variables": ["deforestation_status", "human_pressures"]
+  },
+  {
+    "metric_id": "METRIC_AGRICULTURAL_PRESSURE",
+    "name": "Agricultural Disturbance Pressure",
+    "domain": "human_impact",
+    "description": "Mechanical soil disruption, intensive inversion plowing, compaction from heavy implements, and lack of ground cover.",
+    "unit": "tillage intensity class",
+    "directionality": "lower_is_better",
+    "related_variables": ["agricultural_pressure", "human_pressures"]
+  }
+]

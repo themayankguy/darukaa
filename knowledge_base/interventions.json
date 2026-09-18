@@ -1,0 +1,327 @@
+[
+  {
+    "intervention_id": "INT_LEGUME_INTERCROPPING",
+    "name": "Drought-Tolerant Legume-Cereal Intercropping",
+    "description": "Cultivating alternating rows or mixed stands of deep-rooting drought-hardy legumes (e.g., cowpea, chickpea, pigeon pea) with primary grain crops (e.g., wheat, sorghum, pearl millet).",
+    "applicable_conditions": [
+      "low_soil_organic_carbon",
+      "low_rainfall",
+      "monoculture",
+      "low_species_richness"
+    ],
+    "target_variables": [
+      "soil_organic_carbon_pct",
+      "cropping_pattern",
+      "species_richness"
+    ],
+    "impacted_metrics": [
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_POLLINATOR_INDICATORS"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Requires modified harvesting machinery or synchronized maturity dates",
+      "Potential inter-crop moisture competition during seedling emergence in extreme droughts"
+    ],
+    "evidence_topics": [
+      "legume intercropping",
+      "soil organic carbon",
+      "dryland cropping systems",
+      "biological nitrogen fixation"
+    ]
+  },
+  {
+    "intervention_id": "INT_ALLEY_CROPPING_AGROFORESTRY",
+    "name": "Alley Cropping Agroforestry with Native Nitrogen-Fixing Trees",
+    "description": "Planting widely spaced rows of deep-rooting multipurpose or nitrogen-fixing leguminous trees/shrubs (e.g., Faidherbia albida, Acacia, Leucaena) alongside arable crop strips.",
+    "applicable_conditions": [
+      "low_soil_organic_carbon",
+      "low_rainfall",
+      "high_temperature",
+      "monoculture",
+      "low_habitat_diversity"
+    ],
+    "target_variables": [
+      "soil_organic_carbon_pct",
+      "land_cover",
+      "temperature_regime",
+      "habitat_diversity"
+    ],
+    "impacted_metrics": [
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_TEMPERATURE_STRESS",
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "time_horizon": "Medium-term (1-3 yrs) to Long-term (>3 yrs)",
+    "potential_tradeoffs": [
+      "Tree establishment requires early moisture protection",
+      "Canopy pruning needed to prevent excessive light shading on companion grain crops"
+    ],
+    "evidence_topics": [
+      "agroforestry",
+      "microclimate buffering",
+      "soil carbon sequestration",
+      "habitat connectivity"
+    ]
+  },
+  {
+    "intervention_id": "INT_COVER_CROPPING_RESIDUE",
+    "name": "Multi-Species Cover Cropping & Residue Retention",
+    "description": "Seeding non-cash multi-species vegetative covers (brassicas, legumes, grasses) during fallow intervals combined with continuous surface crop residue retention.",
+    "applicable_conditions": [
+      "low_soil_organic_carbon",
+      "low_soil_moisture",
+      "intensive_tillage",
+      "bare_soil"
+    ],
+    "target_variables": [
+      "soil_organic_carbon_pct",
+      "soil_moisture",
+      "land_cover",
+      "agricultural_pressure"
+    ],
+    "impacted_metrics": [
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_AGRICULTURAL_PRESSURE",
+      "METRIC_HABITAT_DIVERSITY"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Cover crop seed procurement costs",
+      "Must be terminated prior to primary crop sowing to prevent transpirational water depletion in dry seasons"
+    ],
+    "evidence_topics": [
+      "cover crops",
+      "soil organic carbon",
+      "moisture retention",
+      "microbial biomass"
+    ]
+  },
+  {
+    "intervention_id": "INT_CONSERVATION_TILLAGE",
+    "name": "Conservation Tillage & Direct Seeding",
+    "description": "Minimizing soil inversion through no-till or strip-till practices that preserve soil aggregates, fungal mycorrhizal networks, and macro-pore structure.",
+    "applicable_conditions": [
+      "intensive_tillage",
+      "low_soil_organic_carbon",
+      "soil_erosion_degraded"
+    ],
+    "target_variables": [
+      "agricultural_pressure",
+      "soil_organic_carbon_pct",
+      "soil_moisture"
+    ],
+    "impacted_metrics": [
+      "METRIC_AGRICULTURAL_PRESSURE",
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Requires specialized no-till seed drills",
+      "May require non-chemical weed management adaptations during initial transition years"
+    ],
+    "evidence_topics": [
+      "conservation agriculture",
+      "no-till",
+      "soil organic matter",
+      "earthworm abundance"
+    ]
+  },
+  {
+    "intervention_id": "INT_POLLINATOR_HEDGEROWS",
+    "name": "Native Flowering Hedgerows & Field Border Strips",
+    "description": "Establishing perennial linear woody and herbaceous hedgerows along field perimeters with asynchronous flowering phenology and nesting substrates.",
+    "applicable_conditions": [
+      "low_habitat_diversity",
+      "monoculture",
+      "low_species_richness",
+      "low_pollinator_indicators"
+    ],
+    "target_variables": [
+      "habitat_diversity",
+      "species_richness",
+      "biodiversity_indicators"
+    ],
+    "impacted_metrics": [
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_POLLINATOR_INDICATORS"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Takes a modest percentage of boundary field margins out of direct annual crop cultivation",
+      "Requires periodic maintenance pruning to prevent encroaching on field borders"
+    ],
+    "evidence_topics": [
+      "field margins",
+      "hedgerows",
+      "pollinator diversity",
+      "natural pest predators"
+    ]
+  },
+  {
+    "intervention_id": "INT_HABITAT_CORRIDORS",
+    "name": "Ecological Corridors & Native Stepping-Stone Corridors",
+    "description": "Reconnecting fragmented forest remnants and non-cropped parcels via continuous or stepping-stone corridors of indigenous woody vegetation.",
+    "applicable_conditions": [
+      "deforestation",
+      "habitat_fragmentation",
+      "low_species_richness"
+    ],
+    "target_variables": [
+      "deforestation_status",
+      "habitat_diversity",
+      "species_richness"
+    ],
+    "impacted_metrics": [
+      "METRIC_DEFORESTATION_PRESSURE",
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "time_horizon": "Medium-term (1-3 yrs) to Long-term (>3 yrs)",
+    "potential_tradeoffs": [
+      "Requires multi-landowner or landscape-level spatial coordination",
+      "Protection from grazing animals required during seedling establishment"
+    ],
+    "evidence_topics": [
+      "habitat connectivity",
+      "landscape fragmentation",
+      "wildlife corridors",
+      "forest restoration"
+    ]
+  },
+  {
+    "intervention_id": "INT_RIPARIAN_BUFFER_STRIPS",
+    "name": "Multi-Tier Riparian Vegetative Buffer Strips",
+    "description": "Planting deep-rooted trees, native shrubs, and perennial grass filter strips along waterways and drainage depressions to intercept agricultural runoff and stabilize banks.",
+    "applicable_conditions": [
+      "pollution_pressure",
+      "waterlogging",
+      "agricultural_land",
+      "biodiversity_decline"
+    ],
+    "target_variables": [
+      "pollution_pressure",
+      "water_availability",
+      "habitat_diversity"
+    ],
+    "impacted_metrics": [
+      "METRIC_POLLUTION_PRESSURE",
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_WATER_AVAILABILITY"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Reduces cultivated acreage immediately adjacent to stream banks",
+      "Periodic sediment trap dredging may be required if upland erosion is unchecked"
+    ],
+    "evidence_topics": [
+      "riparian buffers",
+      "nutrient runoff interception",
+      "aquatic biodiversity",
+      "soil filtration"
+    ]
+  },
+  {
+    "intervention_id": "INT_CROP_ROTATION_DIVERSIFICATION",
+    "name": "Diversified Multi-Year Crop Rotation with Break Crops",
+    "description": "Replacing continuous cereal monocultures with a structured 3-4 year rotational sequence incorporating tap-rooted brassicas, pulses, and forage greens.",
+    "applicable_conditions": [
+      "monoculture",
+      "soil_health_adequate",
+      "low_habitat_diversity"
+    ],
+    "target_variables": [
+      "cropping_pattern",
+      "habitat_diversity",
+      "species_richness"
+    ],
+    "impacted_metrics": [
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SOIL_ORGANIC_CARBON",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Farmer must establish processing, storage, or local market channels for alternative rotation crops",
+      "Variable year-to-year gross farm margins compared to single cash crop"
+    ],
+    "evidence_topics": [
+      "crop rotation",
+      "break crops",
+      "soil disease suppression",
+      "arthropod diversity"
+    ]
+  },
+  {
+    "intervention_id": "INT_BIOSWALES_WATER_HARVESTING",
+    "name": "Keyline Swales, Micro-Catchments & Vegetated Drainage Bioswales",
+    "description": "Constructing contour bunds, bioswales, and on-farm water infiltration basins planted with hydrophilic native reeds and deep-rooting grasses to manage drainage and recharge aquifers.",
+    "applicable_conditions": [
+      "high_rainfall",
+      "waterlogging",
+      "low_biodiversity"
+    ],
+    "target_variables": [
+      "rainfall_regime",
+      "water_availability",
+      "soil_moisture"
+    ],
+    "impacted_metrics": [
+      "METRIC_WATER_AVAILABILITY",
+      "METRIC_SOIL_MOISTURE",
+      "METRIC_HABITAT_DIVERSITY",
+      "METRIC_SPECIES_RICHNESS"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Earthworking labor and initial micro-topography disturbance during installation",
+      "Requires surveying contour lines across agricultural plots"
+    ],
+    "evidence_topics": [
+      "bioswales",
+      "water retention",
+      "drainage management",
+      "wetland habitat"
+    ]
+  },
+  {
+    "intervention_id": "INT_INTEGRATED_PEST_NUTRIENT_MGMT",
+    "name": "Integrated Pest & Organic Nutrient Management (IPNM)",
+    "description": "Substituting prophylactic chemical pesticide sprays with biological controls, predatory insect perches, composted manure, and precision split-fertilization.",
+    "applicable_conditions": [
+      "pollution_pressure",
+      "cropland",
+      "biodiversity_decline"
+    ],
+    "target_variables": [
+      "pollution_pressure",
+      "biodiversity_condition",
+      "land_use_type"
+    ],
+    "impacted_metrics": [
+      "METRIC_POLLUTION_PRESSURE",
+      "METRIC_SPECIES_RICHNESS",
+      "METRIC_POLLINATOR_INDICATORS",
+      "METRIC_SOIL_ORGANIC_CARBON"
+    ],
+    "time_horizon": "Short-term (<1 yr) to Medium-term (1-3 yrs)",
+    "potential_tradeoffs": [
+      "Requires regular scouting and biological monitoring rather than calendar-based chemical spraying",
+      "Higher initial knowledge requirement for farm operators"
+    ],
+    "evidence_topics": [
+      "integrated pest management",
+      "pesticide reduction",
+      "soil microbial toxicity",
+      "pollinator recovery"
+    ]
+  }
+]

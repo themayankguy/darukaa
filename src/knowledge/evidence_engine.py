@@ -131,6 +131,10 @@ class EvidenceEngine:
             )
             validated_recs.append(validated)
 
+        validated_recs = self._select_strongest_recommendations(
+            validated_recs,
+            candidates,
+        )
         is_sufficient = len(validated_recs) > 0
         notes = (
             f"Successfully grounded {len(validated_recs)} interventions in peer-reviewed scientific literature."
@@ -145,6 +149,29 @@ class EvidenceEngine:
             retrieved_evidence_pool=all_retrieved,
             evidence_notes=notes,
         )
+
+    def _select_strongest_recommendations(
+        self,
+        validated_recommendations: List[ValidatedRecommendation],
+        candidates: List[CandidateRecommendation],
+        limit: int = 3,
+    ) -> List[ValidatedRecommendation]:
+        """Selects the strongest already-validated recommendations deterministically."""
+        candidate_by_id = {candidate.intervention_id: candidate for candidate in candidates}
+        confidence_rank = {"High": 3, "Medium": 2, "Low": 1}
+
+        def ranking_key(recommendation: ValidatedRecommendation) -> tuple:
+            candidate = candidate_by_id[recommendation.intervention_id]
+            return (
+                confidence_rank.get(recommendation.confidence, 0),
+                len(recommendation.evidence),
+                len(candidate.variables_addressed),
+                len(recommendation.impacted_metrics),
+                len(candidate.triggering_relationships),
+                recommendation.intervention_id,
+            )
+
+        return sorted(validated_recommendations, key=ranking_key, reverse=True)[:limit]
 
     def _extract_verified_quantitative_claim(
         self,

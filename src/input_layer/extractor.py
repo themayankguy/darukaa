@@ -28,7 +28,12 @@ class EnvironmentalExtractor:
         # 1. Soil Health Extraction
         # ---------------------------------------------------------
         # Soil Organic Carbon % (e.g., '0.3% organic carbon', 'SOC is 0.3%', 'soil organic carbon is 0.3%')
-        soc_match = re.search(r"(?:soil organic carbon|soc|organic carbon|carbon)\s*(?:level|content|is|of|:|=)?\s*(\d+(?:\.\d+)?)\s*%", lower_text)
+        soc_match = re.search(
+            r"(?:soil organic carbon|soc|organic carbon|carbon)\s*"
+            r"(?:level|content|is|of|:|=)?\s*"
+            r"(?:low\s+at\s+)?(\d+(?:\.\d+)?)\s*%",
+            lower_text,
+        )
         if not soc_match:
             soc_match = re.search(r"(\d+(?:\.\d+)?)\s*%\s*(?:soil organic carbon|soc|organic carbon)", lower_text)
         if soc_match:
@@ -48,7 +53,22 @@ class EnvironmentalExtractor:
                 pass
 
         # Soil Moisture
-        if re.search(r"\b(now\s+adequate|adequate\s+moisture|adequate|moist)\b", lower_text):
+        moisture_match = re.search(
+            r"\bsoil\s+moisture(?:\s+condition)?\s+(?:is|=|:)?\s*"
+            r"(very\s+low|low|dry|parched|adequate|moist|waterlogged|saturated|flooded|ponding)\b",
+            lower_text,
+        )
+        if moisture_match:
+            moisture_value = moisture_match.group(1).replace(" ", "_")
+            if moisture_value in {"very_low", "low"}:
+                extracted_dict["soil_moisture"] = "low"
+            elif moisture_value in {"dry", "parched"}:
+                extracted_dict["soil_moisture"] = "dry"
+            elif moisture_value in {"waterlogged", "saturated", "flooded", "ponding"}:
+                extracted_dict["soil_moisture"] = "waterlogged"
+            else:
+                extracted_dict["soil_moisture"] = "adequate"
+        elif re.search(r"\b(now\s+adequate|adequate\s+moisture|adequate|moist)\b", lower_text):
             extracted_dict["soil_moisture"] = "adequate"
         elif re.search(r"\b(waterlogged|saturated|flooded|ponding)\b", lower_text):
             extracted_dict["soil_moisture"] = "waterlogged"
@@ -75,15 +95,28 @@ class EnvironmentalExtractor:
         # ---------------------------------------------------------
         # 3. Biodiversity Indicators
         # ---------------------------------------------------------
-        if "low species richness" in lower_text or "species richness is low" in lower_text:
-            extracted_dict["species_richness"] = "low"
-        elif "high species richness" in lower_text:
-            extracted_dict["species_richness"] = "high"
+        combined_biodiversity_match = re.search(
+            r"\bhabitat\s+diversity\s+and\s+species\s+richness\s+"
+            r"(?:are|is)\s+(?:also\s+)?(low|poor|high|moderate)\b",
+            lower_text,
+        )
+        if combined_biodiversity_match:
+            extracted_dict["habitat_diversity"] = combined_biodiversity_match.group(1)
+            extracted_dict["species_richness"] = combined_biodiversity_match.group(1)
 
-        if "low habitat diversity" in lower_text or "habitat diversity is low" in lower_text:
-            extracted_dict["habitat_diversity"] = "low"
-        elif "high habitat diversity" in lower_text:
-            extracted_dict["habitat_diversity"] = "high"
+        species_match = re.search(
+            r"\bspecies\s+richness\s+(?:is|=|:)?\s*(low|poor|high|moderate)\b",
+            lower_text,
+        )
+        if species_match:
+            extracted_dict["species_richness"] = species_match.group(1)
+
+        habitat_match = re.search(
+            r"\bhabitat\s+diversity\s+(?:is|=|:)?\s*(low|poor|high|moderate)\b",
+            lower_text,
+        )
+        if habitat_match:
+            extracted_dict["habitat_diversity"] = habitat_match.group(1)
 
         if re.search(r"\b(biodiversity\s+is\s+declining|declining\s+biodiversity|biodiversity\s+loss|biodiversity\s+drop)\b", lower_text):
             extracted_dict["biodiversity_condition"] = "declining"

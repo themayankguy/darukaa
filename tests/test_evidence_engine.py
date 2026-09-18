@@ -105,3 +105,49 @@ def test_evaluate_candidate_grounding(evidence_engine):
     assert rec.confidence in ["High", "Medium"]
     assert len(rec.evidence) >= 1
     assert "FAO" in rec.why_it_works or "Food and Agriculture Organization" in rec.why_it_works or len(rec.evidence[0].source_organization) > 0
+
+
+def test_validated_recommendations_are_ranked_and_capped(evidence_engine):
+    """All candidates are validated before the strongest three are selected."""
+    candidates = []
+    relationships = []
+    for intervention_id, action in [
+        ("INT_LEGUME_INTERCROPPING", "Legume Intercropping"),
+        ("INT_ALLEY_CROPPING_AGROFORESTRY", "Alley Cropping"),
+        ("INT_POLLINATOR_HEDGEROWS", "Pollinator Hedgerows"),
+        ("INT_CROP_ROTATION_DIVERSIFICATION", "Crop Rotation"),
+    ]:
+        candidates.append(
+            CandidateRecommendation(
+                intervention_id=intervention_id,
+                action=action,
+                description=action,
+                triggering_relationships=[f"REL_{intervention_id}"],
+                variables_addressed=["soil_organic_carbon_pct", "species_richness"],
+                impacted_metrics=["METRIC_SPECIES_RICHNESS", "METRIC_SOIL_ORGANIC_CARBON"],
+                time_horizon="Medium-term",
+                required_evidence_topics=[action.lower()],
+            )
+        )
+        relationships.append(
+            TriggeredRelationship(
+                relationship_id=f"REL_{intervention_id}",
+                name=action,
+                variables_involved=["soil_organic_carbon_pct", "species_richness", "cropping_pattern"],
+                conditions_detected=["low_soil_organic_carbon", "low_species_richness", "monoculture"],
+                mechanism="The relationship supports this intervention.",
+                affected_metrics=["METRIC_SPECIES_RICHNESS"],
+                candidate_interventions=[intervention_id],
+                evidence_topics=[action.lower()],
+            )
+        )
+
+    first = evidence_engine.evaluate_candidates(candidates, relationships)
+    second = evidence_engine.evaluate_candidates(candidates, relationships)
+
+    assert len(first.validated_recommendations) <= 3
+    assert len(first.validated_recommendations) >= 1
+    assert all(recommendation.evidence for recommendation in first.validated_recommendations)
+    assert [r.intervention_id for r in first.validated_recommendations] == [
+        r.intervention_id for r in second.validated_recommendations
+    ]
